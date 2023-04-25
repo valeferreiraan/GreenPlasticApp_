@@ -5,6 +5,7 @@ import 'package:greenplastic_app/constants.dart';
 import '../pages/menuPage.dart';
 
 class HomePage extends StatelessWidget {
+  final _textController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,6 +29,7 @@ class HomePage extends StatelessWidget {
             width: 250,
             height: 35,
             child: TextFormField(
+              controller: _textController,
               keyboardType: TextInputType.text,
               textInputAction: TextInputAction.next,
               cursorColor: Color3,
@@ -75,7 +77,14 @@ class HomePage extends StatelessWidget {
               height: 35,
               child: ElevatedButton(
                   onPressed: () {
-                    Get.to(MenuPage());
+                    if(_textController.text.isEmpty){
+                      Get.snackbar('Error','Value can not be empty',
+                        icon: Icon(Icons.alarm),
+                        backgroundColor: Colors.red);
+                    } else {
+                      
+                      Get.to(MenuPage());
+                    }
                   },
                   child: Text(
                     'CONTINUAR',

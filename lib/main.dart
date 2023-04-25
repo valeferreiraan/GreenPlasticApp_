@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:greenplastic_app/constants.dart';
-import 'package:greenplastic_app/pages/home.dart';
+import 'package:greenplastic_app/ui/pages/home.dart';
+
 
 void main() {
   runApp(const MainApp());

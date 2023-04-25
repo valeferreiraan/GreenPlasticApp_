@@ -6,6 +6,12 @@ const Color2 = Color.fromRGBO(116, 159, 130, 1.0);
 const Color3 = Color.fromRGBO(168, 232, 144, 1.0);
 const Color4 = Color.fromRGBO(207, 255, 141, 1.0);
 
+const START_ROUTE = '/start';
+const LOGIN_ROUTE = '/login';
+const SIGNUP_ROUTE = '/signup';
+const HOME_ROUTE = '/home';
+const DETAIL_ROUTE = '/detail';
+
 const ColorScheme flexSchemeLight = ColorScheme(
   brightness: Brightness.light,
   primary: Color(0xff065808),
