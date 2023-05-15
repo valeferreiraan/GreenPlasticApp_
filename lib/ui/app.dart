@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:named_getx_navigation/constants.dart';
-import 'package:named_getx_navigation/ui/pages/authentication/signup.dart';
-import 'package:named_getx_navigation/ui/pages/content/home.dart';
+import 'package:greenplastic_app/ui/pages/authentication/signup.dart';
+import 'package:greenplastic_app/ui/pages/home.dart';
+import 'package:greenplastic_app/constants.dart';
 import 'pages/authentication/login.dart';
 import 'pages/content/detail.dart';
 import 'pages/start.dart';
