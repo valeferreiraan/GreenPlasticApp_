@@ -5,7 +5,6 @@ import 'package:greenplastic_app/ui/pages/home.dart';
 import 'package:greenplastic_app/constants.dart';
 import 'pages/authentication/login.dart';
 import 'pages/content/detail.dart';
-import 'pages/start.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 
 class App extends StatelessWidget {
@@ -73,9 +72,8 @@ class App extends StatelessWidget {
 // to let the device system mode control the theme mode:
 // themeMode: ThemeMode.system,
 
-      initialRoute: START_ROUTE,
+      initialRoute: LOGIN_ROUTE,
       getPages: [
-        GetPage(name: START_ROUTE, page: () => StartScreen()),
         GetPage(name: LOGIN_ROUTE, page: () => LoginScreen()),
         GetPage(name: SIGNUP_ROUTE, page: () => SignUpPage()),
         GetPage(name: DETAIL_ROUTE, page: () => DetailPage()),
