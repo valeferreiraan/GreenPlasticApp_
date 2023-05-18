@@ -1,3 +1,4 @@
+import 'dart:js';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -10,9 +11,9 @@ import 'package:greenplastic_app/ui/controllers/DataBase_temporal.dart';
 class HomePageCart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    AppBar(
+    /*AppBar(
       centerTitle: true,
-      title: const Text('Product List'),
+      title: const Text('Lista de Productos'),
       actions: [
         b.Badge(
           badgeContent: Consumer<CartProvider>(
@@ -37,8 +38,8 @@ class HomePageCart extends StatelessWidget {
           width: 20.0,
         ),
       ],
-    );
-    ListView.builder(
+    );*/
+    return ListView.builder(
         padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 8.0),
         shrinkWrap: true,
         itemCount: products.length,
@@ -121,8 +122,30 @@ class HomePageCart extends StatelessWidget {
             ),
           );
         });
-
-    // TODO: implement build
-    throw UnimplementedError();
   }
+}
+
+final cart = Provider.of<CartProvider>(context as BuildContext);
+
+void saveData(int index) {
+  var dbHelper;
+  dbHelper
+      .insert(
+    Cart(
+      id: index,
+      productId: index.toString(),
+      productName: products[index].name,
+      initialPrice: products[index].price,
+      productPrice: products[index].price,
+      quantity: ValueNotifier(1),
+      unitTag: products[index].unit,
+    ),
+  )
+      .then((value) {
+    cart.addTotalPrice(products[index].price.toDouble());
+    cart.addCounter();
+    print('Product Added to cart');
+  }).onError((error, stackTrace) {
+    print(error.toString());
+  });
 }
