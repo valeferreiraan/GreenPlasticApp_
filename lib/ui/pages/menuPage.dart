@@ -23,10 +23,63 @@ class _menuPageState extends State<MenuPage> {
             SizedBox(
               height: 50,
             ),
-            Text('Catalogo'),
-            Text('Cotización'),
-            Text('Historial'),
-            Text('Formulario \ncontacto')
+            SizedBox(
+                width: 250,
+                height: 35,
+                child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Catálogo',
+                      style: Theme.of(context).textTheme.labelLarge,
+                    ))),
+            SizedBox(
+              height: 40,
+            ),
+            SizedBox(
+                width: 250,
+                height: 35,
+                child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Cotización',
+                      style: Theme.of(context).textTheme.labelLarge,
+                    ))),
+            SizedBox(
+              height: 40,
+            ),
+            SizedBox(
+                width: 250,
+                height: 35,
+                child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Historial',
+                      style: Theme.of(context).textTheme.labelLarge,
+                    ))),
+            SizedBox(
+              height: 40,
+            ),
+            SizedBox(
+                width: 250,
+                height: 70,
+                child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Formulario \n contacto',
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.labelLarge,
+                    ))),
+            Spacer(),
+            SizedBox(
+                width: 40,
+                height: 35,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: Icon(Icons.logout),
+                )),
+            SizedBox(
+              height: 35,
+            ),
           ],
         ),
       ),
@@ -41,8 +94,9 @@ class _menuPageState extends State<MenuPage> {
           ),
           Center(
             child: Text(
-              'Home',
-              textScaleFactor: 2,
+              'Green Plastic es un agente de cambio ambiental, revalorizamos retales plásticos de un solo uso mediante la transformación a elementos de larga vida, bajo un modelo de economía circular.',
+              textScaleFactor: 1,
+              textAlign: TextAlign.center,
             ),
           )
         ],

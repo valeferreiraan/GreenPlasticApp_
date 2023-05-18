@@ -14,7 +14,8 @@ class HomePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(
+          Container(child: Image.asset('assets\GreenPlastic.png')),
+          /*Text(
             'Green Plastic \n App',
             textAlign: TextAlign.center,
             style: Theme.of(context)
@@ -24,7 +25,7 @@ class HomePage extends StatelessWidget {
               Shadow(blurRadius: 2.0, color: Color1, offset: Offset(1.0, 1.0))
             ])*/
             ,
-          ),
+          ),*/
           SizedBox(
             width: 250,
             height: 35,
@@ -77,12 +78,10 @@ class HomePage extends StatelessWidget {
               height: 35,
               child: ElevatedButton(
                   onPressed: () {
-                    if(_textController.text.isEmpty){
-                      Get.snackbar('Error','Value can not be empty',
-                        icon: Icon(Icons.alarm),
-                        backgroundColor: Colors.red);
+                    if (_textController.text.isEmpty) {
+                      Get.snackbar('Error', 'Value can not be empty',
+                          icon: Icon(Icons.alarm), backgroundColor: Colors.red);
                     } else {
-                      
                       Get.to(MenuPage());
                     }
                   },

@@ -5,7 +5,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:greenplastic_app/constants.dart';
 import 'package:greenplastic_app/ui/pages/home.dart';
 
-
 void main() {
   runApp(const MainApp());
 }
@@ -21,11 +20,11 @@ class MainApp extends StatelessWidget {
         colorScheme: flexSchemeLight,
         fontFamily: 'Julius Sans One',
         textTheme: TextTheme(
-          bodyMedium: GoogleFonts.juliusSansOne(
+          bodyMedium: GoogleFonts.quicksand(
             fontSize: 24.0,
             fontWeight: FontWeight.normal,
           ),
-          headlineLarge: GoogleFonts.luckiestGuy(
+          headlineLarge: GoogleFonts.righteous(
             fontSize: 45.0,
             fontWeight: FontWeight.normal,
             color: Colors.white,
@@ -33,13 +32,13 @@ class MainApp extends StatelessWidget {
               Shadow(blurRadius: 2.0, color: Color1, offset: Offset(1.0, 1.0))
             ],
           ),
-          labelLarge: GoogleFonts.juliusSansOne(
+          labelLarge: GoogleFonts.quicksand(
             fontSize: 24.0,
             fontWeight: FontWeight.normal,
             color: Colors.white,
           ),
         ),
-        primaryTextTheme: GoogleFonts.juliusSansOneTextTheme(),
+        primaryTextTheme: GoogleFonts.quicksandTextTheme(),
         scaffoldBackgroundColor: mainColor,
       ),
       home: HomePage(),
