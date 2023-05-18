@@ -2,6 +2,7 @@ import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:greenplastic_app/constants.dart';
+import 'package:greenplastic_app/ui/pages/home.dart';
 
 class MenuPage extends StatefulWidget {
   @override
@@ -71,12 +72,14 @@ class _menuPageState extends State<MenuPage> {
                     ))),
             Spacer(),
             SizedBox(
-                width: 40,
-                height: 35,
+                /*width: 35,
+                height: 35,*/
                 child: ElevatedButton(
-                  onPressed: () {},
-                  child: Icon(Icons.logout),
-                )),
+              onPressed: () {
+                Get.to(HomePage());
+              },
+              child: Icon(Icons.logout),
+            )),
             SizedBox(
               height: 35,
             ),
@@ -93,12 +96,21 @@ class _menuPageState extends State<MenuPage> {
             color: Color3,
           ),
           Center(
-            child: Text(
-              'Green Plastic es un agente de cambio ambiental, revalorizamos retales plásticos de un solo uso mediante la transformación a elementos de larga vida, bajo un modelo de economía circular.',
-              textScaleFactor: 1,
-              textAlign: TextAlign.center,
-            ),
-          )
+              child: Column(
+            children: [
+              Image.asset(
+                'assets/GreenPlastic.png',
+                width: 200,
+                height: 200,
+              ),
+              Text(
+                'Green Plastic es un agente de cambio ambiental, revalorizamos retales plásticos de un solo uso mediante la transformación a elementos de larga vida, bajo un modelo de economía circular.',
+                textScaleFactor: 1,
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.white),
+              ),
+            ],
+          ))
         ],
       ),
     );

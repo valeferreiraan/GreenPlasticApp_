@@ -5,6 +5,7 @@ const Color1 = Color.fromRGBO(66, 95, 87, 1.0);
 const Color2 = Color.fromRGBO(116, 159, 130, 1.0);
 const Color3 = Color.fromRGBO(168, 232, 144, 1.0);
 const Color4 = Color.fromRGBO(207, 255, 141, 1.0);
+const backColor = Color.fromRGBO(53, 108, 5, 1);
 
 const START_ROUTE = '/start';
 const LOGIN_ROUTE = '/login';

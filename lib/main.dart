@@ -39,7 +39,7 @@ class MainApp extends StatelessWidget {
           ),
         ),
         primaryTextTheme: GoogleFonts.quicksandTextTheme(),
-        scaffoldBackgroundColor: mainColor,
+        scaffoldBackgroundColor: backColor,
       ),
       home: HomePage(),
       debugShowCheckedModeBanner: false,

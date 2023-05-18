@@ -14,21 +14,14 @@ class HomePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(child: Image.asset('assets\GreenPlastic.png')),
-          /*Text(
-            'Green Plastic \n App',
-            textAlign: TextAlign.center,
-            style: Theme.of(context)
-                .textTheme
-                .headlineLarge /*TextStyle(color: Colors.white,
-            shadows: [
-              Shadow(blurRadius: 2.0, color: Color1, offset: Offset(1.0, 1.0))
-            ])*/
-            ,
-          ),*/
+          Image.asset(
+            'assets/GreenPlastic.png',
+            width: 300,
+            height: 300,
+          ),
           SizedBox(
             width: 250,
-            height: 35,
+            height: 45,
             child: TextFormField(
               controller: _textController,
               keyboardType: TextInputType.text,
@@ -53,7 +46,7 @@ class HomePage extends StatelessWidget {
           ),
           SizedBox(
             width: 250,
-            height: 35,
+            height: 45,
             child: TextFormField(
               textInputAction: TextInputAction.done,
               obscureText: true,
@@ -80,7 +73,8 @@ class HomePage extends StatelessWidget {
                   onPressed: () {
                     if (_textController.text.isEmpty) {
                       Get.snackbar('Error', 'Value can not be empty',
-                          icon: Icon(Icons.alarm), backgroundColor: Colors.red);
+                          icon: Icon(Icons.warning),
+                          backgroundColor: Colors.red);
                     } else {
                       Get.to(MenuPage());
                     }
