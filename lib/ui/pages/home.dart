@@ -72,7 +72,7 @@ class HomePage extends StatelessWidget {
               child: ElevatedButton(
                   onPressed: () {
                     if (_textController.text.isEmpty) {
-                      Get.snackbar('Error', 'Value can not be empty',
+                      Get.snackbar('Error', 'Los campos no pueden estar vacíos',
                           icon: Icon(Icons.warning),
                           backgroundColor: Colors.red);
                     } else {

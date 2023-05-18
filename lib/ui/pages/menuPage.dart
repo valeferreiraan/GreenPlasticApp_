@@ -2,7 +2,9 @@ import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:greenplastic_app/constants.dart';
+import 'package:greenplastic_app/ui/pages/Cart_Catalogue/home.dart';
 import 'package:greenplastic_app/ui/pages/home.dart';
+import 'package:greenplastic_app/ui/controllers/login_controller.dart';
 
 class MenuPage extends StatefulWidget {
   @override
@@ -28,7 +30,9 @@ class _menuPageState extends State<MenuPage> {
                 width: 250,
                 height: 35,
                 child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.to(HomePageCart());
+                    },
                     child: Text(
                       'Catálogo',
                       style: Theme.of(context).textTheme.labelLarge,
