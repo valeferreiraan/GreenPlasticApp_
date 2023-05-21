@@ -1,5 +1,3 @@
-import 'package:firebase_database/firebase_database.dart';
-
 /*
 DEBEMOS TENER:
   1. Base de datos de los productos
@@ -47,16 +45,29 @@ delClient(id): eliminar un cliente
 
 class Cotizacion{
   String? key;
-  late Vendedor vendedor;
-  late Cliente cliente;
+  CotiData? cotiData;
+
+  Cotizacion({this.key, this.cotiData});
+}
+
+class CotiData{
+  Vendedor? vendedor;
+  Cliente? cliente;
   late Map<Producto,int> productos;
   double precioTotal=0;
 
-  Cotizacion(this.key, this.vendedor, this.cliente, this.productos);
+  CotiData(this.vendedor, this.cliente, this.productos);
+
+  CotiData.fromJson(Map<dynamic,dynamic> json){
+    vendedor = json["vendedor"];
+    cliente = json["cliente"];
+    productos = json["productos"];
+    precioTotal = json["precioTotal"];
+  }
   
-  Cotizacion.calcPrecioTotal(){
+  CotiData.calcPrecioTotal(){
     for(Producto prod in productos.keys){
-      precioTotal+=prod.precio*productos[prod]!;
+      precioTotal+=prod.prodData!.precio!*productos[prod]!;
     }
   }
   
@@ -64,25 +75,57 @@ class Cotizacion{
 
 class Producto{
   String? key;
-  late String nombre;
-  late double precio;
+  ProdData? prodData;
 
-  Producto(this.key, this.nombre, this.precio);
+  Producto({this.key, this.prodData});
+}
+
+class ProdData{
+  String? nombre;
+  double? precio;
+  //toca poner imagen
+
+  ProdData(this.nombre, this.precio);
+
+  ProdData.fromJson(Map<dynamic,dynamic> json){
+    nombre = json["nombre"];
+    precio = json["precio"];
+  }
 }
 
 class Vendedor{
   String? key;
+  SellData? sellData;
+
+  Vendedor({this.key, this.sellData});
+}
+
+class SellData{
   late String rol;
   late String nombre;
   late String apellido;
   late String email;
   late String passw;
 
-  Vendedor(this.key, this.rol, this.nombre, this.apellido, this.email, this.passw);
+  SellData(this.rol, this.nombre, this.apellido, this.email, this.passw);
+
+  SellData.fromJson(Map<dynamic, dynamic> json){
+    rol = json["rol"];
+    nombre = json["nombre"];
+    apellido = json["apellido"];
+    email = json["email"];
+    passw = json["passw"];
+  }
 }
 
 class Cliente{
   String? key;
+  ClientData? clientData;
+
+  Cliente({this.key, this.clientData});
+}
+
+class ClientData{
   late String nombre;
   late String apellido;
   late int telefono;
@@ -91,6 +134,15 @@ class Cliente{
   late String ciudad;
   late Vendedor vendedor;
 
-  Cliente(this.key, this.nombre, this.apellido, this.telefono, this.nitEmpresa, this.empresa, this.ciudad, this.vendedor);
+  ClientData(this.nombre, this.apellido, this.telefono, this.nitEmpresa, this.empresa, this.ciudad, this.vendedor);
 
+  ClientData.fromJson(Map<dynamic, dynamic> json){
+    nombre = json["nombre"];
+    apellido = json["apellido"];
+    telefono = json["telefono"];
+    nitEmpresa = json["nitEmpresa"];
+    empresa = json["empresa"];
+    ciudad = json["ciudad"];
+    vendedor = json["vendedor"];
+  }
 }

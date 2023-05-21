@@ -5,6 +5,7 @@ import 'package:greenplastic_app/constants.dart';
 import 'package:greenplastic_app/ui/pages/Cart_Catalogue/home.dart';
 import 'package:greenplastic_app/ui/pages/home.dart';
 import 'package:greenplastic_app/ui/controllers/login_controller.dart';
+import 'package:greenplastic_app/ui/pages/prueba_database.dart';
 
 class MenuPage extends StatefulWidget {
   @override
@@ -71,6 +72,21 @@ class _menuPageState extends State<MenuPage> {
                     onPressed: () {},
                     child: Text(
                       'Formulario \n contacto',
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.labelLarge,
+                    ))),
+            SizedBox(
+              height: 40,
+            ),
+            SizedBox(
+                width: 250,
+                height: 35,
+                child: ElevatedButton(
+                    onPressed: () {
+                      Get.to(PruebaDatabase());
+                    },
+                    child: Text(
+                      'Test product',
                       textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.labelLarge,
                     ))),
