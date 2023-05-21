@@ -6,6 +6,9 @@ import 'package:greenplastic_app/ui/pages/Cart_Catalogue/catalogo_productos.dart
 import 'package:greenplastic_app/ui/pages/home.dart';
 import 'package:greenplastic_app/ui/controllers/login_controller.dart';
 
+import 'cotizacion.dart';
+import 'historial.dart';
+
 class MenuPage extends StatefulWidget {
   @override
   _menuPageState createState() => _menuPageState();
@@ -44,7 +47,9 @@ class _menuPageState extends State<MenuPage> {
                 width: 250,
                 height: 35,
                 child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.to(CotizacionPage());
+                    },
                     child: Text(
                       'Cotización',
                       style: Theme.of(context).textTheme.labelLarge,
@@ -56,7 +61,9 @@ class _menuPageState extends State<MenuPage> {
                 width: 250,
                 height: 35,
                 child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.to(HistorialPage());
+                    },
                     child: Text(
                       'Historial',
                       style: Theme.of(context).textTheme.labelLarge,
