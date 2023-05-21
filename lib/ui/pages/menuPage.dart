@@ -2,7 +2,7 @@ import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:greenplastic_app/constants.dart';
-import 'package:greenplastic_app/ui/pages/Cart_Catalogue/home.dart';
+import 'package:greenplastic_app/ui/pages/Cart_Catalogue/catalogo_productos.dart';
 import 'package:greenplastic_app/ui/pages/home.dart';
 import 'package:greenplastic_app/ui/controllers/login_controller.dart';
 

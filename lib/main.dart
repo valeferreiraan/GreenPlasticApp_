@@ -18,10 +18,14 @@ class MainApp extends StatelessWidget {
       title: 'Green Plastic App',
       theme: ThemeData(
         colorScheme: flexSchemeLight,
-        fontFamily: 'Julius Sans One',
+        fontFamily: 'Quicksand',
         textTheme: TextTheme(
           bodyMedium: GoogleFonts.quicksand(
             fontSize: 24.0,
+            fontWeight: FontWeight.normal,
+          ),
+          bodySmall: GoogleFonts.quicksand(
+            fontSize: 12.0,
             fontWeight: FontWeight.normal,
           ),
           headlineLarge: GoogleFonts.righteous(
