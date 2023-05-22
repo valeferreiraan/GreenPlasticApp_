@@ -2,10 +2,12 @@ import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:greenplastic_app/constants.dart';
+import 'package:greenplastic_app/ui/controllers/login_controller.dart';
 import '../pages/menuPage.dart';
 
 class HomePage extends StatelessWidget {
   final _textController = TextEditingController();
+  final _LoginCon = LoginController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +30,7 @@ class HomePage extends StatelessWidget {
               textInputAction: TextInputAction.next,
               cursorColor: Color3,
               style: Theme.of(context).textTheme.bodyMedium,
-              onChanged: (user) {},
+              onChanged: (user) => _LoginCon.setEmail(user),
               onSaved: (user) {
                 debugPrint(user);
               },
@@ -51,6 +53,7 @@ class HomePage extends StatelessWidget {
               textInputAction: TextInputAction.done,
               obscureText: true,
               cursorColor: Color3,
+              onChanged: (pswd) => _LoginCon.setPass(pswd),
               onSaved: (pswd) {
                 debugPrint(pswd);
               },
@@ -71,13 +74,14 @@ class HomePage extends StatelessWidget {
               height: 35,
               child: ElevatedButton(
                   onPressed: () {
-                    if (_textController.text.isEmpty) {
+                    /*if (_textController.text.isEmpty) {
                       Get.snackbar('Error', 'Los campos no pueden estar vacíos',
                           icon: Icon(Icons.warning),
                           backgroundColor: Colors.red);
                     } else {
                       Get.to(MenuPage());
-                    }
+                    }*/
+                    _LoginCon.login(_LoginCon.user.value, _LoginCon.pswd.value);
                   },
                   child: Text(
                     'CONTINUAR',

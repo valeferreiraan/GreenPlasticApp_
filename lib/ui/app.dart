@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:greenplastic_app/ui/pages/authentication/signup.dart';
 import 'package:greenplastic_app/ui/pages/home.dart';
 import 'package:greenplastic_app/constants.dart';
-import 'pages/authentication/login.dart';
-import 'pages/content/detail.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
+
+import 'pages/cotizacion.dart';
+import 'pages/historial.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -74,9 +74,8 @@ class App extends StatelessWidget {
 
       initialRoute: LOGIN_ROUTE,
       getPages: [
-        GetPage(name: LOGIN_ROUTE, page: () => LoginScreen()),
-        GetPage(name: SIGNUP_ROUTE, page: () => SignUpPage()),
-        GetPage(name: DETAIL_ROUTE, page: () => DetailPage()),
+        GetPage(name: COTIZACION_ROUTE, page: () => CotizacionPage()),
+        GetPage(name: HISTORIAL_ROUTE, page: () => HistorialPage()),
         GetPage(
             name: HOME_ROUTE,
             page: () => HomePage(),
