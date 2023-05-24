@@ -2,14 +2,10 @@ import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:greenplastic_app/constants.dart';
+import 'package:greenplastic_app/ui/pages/Cart_Catalogue/catalogo_productos.dart';
 import 'package:greenplastic_app/ui/pages/home.dart';
 import 'package:greenplastic_app/ui/controllers/login_controller.dart';
 import 'package:greenplastic_app/ui/pages/prueba_database.dart';
-//import 'package:greenplastic_app/ui/pages/pruebasubirdatos.dart';
-
-import 'Cart_Catalogue/catalogo_productos.dart';
-import 'cotizacion.dart';
-import 'historial.dart';
 
 class MenuPage extends StatefulWidget {
   @override
@@ -36,7 +32,7 @@ class _menuPageState extends State<MenuPage> {
                 height: 35,
                 child: ElevatedButton(
                     onPressed: () {
-                      Get.to(HomePageCart());
+                      Get.to(ProductCatalog());
                     },
                     child: Text(
                       'Catálogo',
@@ -50,7 +46,7 @@ class _menuPageState extends State<MenuPage> {
                 height: 35,
                 child: ElevatedButton(
                     onPressed: () {
-                      Get.to(CotizacionPage());
+
                     },
                     child: Text(
                       'Cotización',
@@ -63,9 +59,7 @@ class _menuPageState extends State<MenuPage> {
                 width: 250,
                 height: 35,
                 child: ElevatedButton(
-                    onPressed: () {
-                      Get.to(HistorialPage());
-                    },
+                    onPressed: () {},
                     child: Text(
                       'Historial',
                       style: Theme.of(context).textTheme.labelLarge,
@@ -91,7 +85,7 @@ class _menuPageState extends State<MenuPage> {
                 height: 35,
                 child: ElevatedButton(
                     onPressed: () {
-                      //Get.to(PruebaDatabase());
+                      Get.to(PruebaDatabase());
                     },
                     child: Text(
                       'Test product',
@@ -125,60 +119,17 @@ class _menuPageState extends State<MenuPage> {
           ),
           Center(
               child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
                 'assets/GreenPlastic.png',
                 width: 200,
                 height: 200,
               ),
-              Padding(
-                padding: const EdgeInsets.all(
-                    16), // Espacio entre los bordes de la aplicación y el rectángulo
-                child: Stack(
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image.asset(
-                        '/forest.jpg', // Ruta relativa del archivo de imagen
-                        width: double.maxFinite,
-                        height: 132,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(
-                          10), // Bordes curvos del rectángulo
-                      child: Container(
-                        color: Color3.withOpacity(
-                            0.5), // Color con opacidad del 50%
-                        padding: EdgeInsets.all(16),
-                        child: Center(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Align(
-                                alignment: Alignment.center,
-                                child: Text(
-                                  'Green Plastic es un agente de cambio ambiental, revalorizamos retales plásticos de un solo uso mediante la transformación a elementos de larga vida, bajo un modelo de economía circular.',
-                                  textScaleFactor: 1,
-                                  textAlign: TextAlign
-                                      .justify, // Alineación justificada del texto
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 20),
-                              // Otros elementos dentro del rectángulo
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+              Text(
+                'Green Plastic es un agente de cambio ambiental, revalorizamos retales plásticos de un solo uso mediante la transformación a elementos de larga vida, bajo un modelo de economía circular.',
+                textScaleFactor: 1,
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.white),
               ),
             ],
           ))
