@@ -43,64 +43,108 @@ delClient(id): eliminar un cliente
 
 */
 
-class Cotizacion{
+import 'dart:html';
+
+class Cotizacion {
   String? key;
   CotiData? cotiData;
 
   Cotizacion({this.key, this.cotiData});
 }
 
-class CotiData{
+class CotiData {
   Vendedor? vendedor;
   Cliente? cliente;
-  late Map<Producto,int> productos;
-  double precioTotal=0;
+  late Map<Producto, int> productos;
+  double precioTotal = 0;
 
   CotiData(this.vendedor, this.cliente, this.productos);
 
-  CotiData.fromJson(Map<dynamic,dynamic> json){
+  CotiData.fromJson(Map<dynamic, dynamic> json) {
     vendedor = json["vendedor"];
     cliente = json["cliente"];
     productos = json["productos"];
     precioTotal = json["precioTotal"];
   }
-  
-  CotiData.calcPrecioTotal(){
-    for(Producto prod in productos.keys){
-      precioTotal+=prod.prodData!.precio!*productos[prod]!;
+
+  CotiData.calcPrecioTotal() {
+    for (Producto prod in productos.keys) {
+      precioTotal += prod.prodData!.precio! * productos[prod]!;
     }
   }
-  
 }
 
-class Producto{
+class Producto {
   String? key;
   ProdData? prodData;
 
   Producto({this.key, this.prodData});
 }
 
-class ProdData{
+class ProdData {
   String? nombre;
   double? precio;
-  //toca poner imagen
+  String? size;
+  String? imagen;
+  double? altura;
+  int? tendSup;
+  int? tendInf;
+  int? durmientes;
+  double? peso;
+  double? resDinamica;
+  double? resEstatica;
+  double? resVacio;
+  double? dimension;
+  double? dilatacion;
+  int? entradas;
+  int? garantia;
 
-  ProdData(this.nombre, this.precio);
+  ProdData(
+      this.nombre,
+      this.precio,
+      this.size,
+      this.imagen,
+      this.altura,
+      this.tendSup,
+      this.tendInf,
+      this.durmientes,
+      this.peso,
+      this.resDinamica,
+      this.resEstatica,
+      this.resVacio,
+      this.dimension,
+      this.dilatacion,
+      this.entradas,
+      this.garantia);
 
-  ProdData.fromJson(Map<dynamic,dynamic> json){
+  ProdData.fromJson(Map<dynamic, dynamic> json) {
     nombre = json["nombre"];
     precio = json["precio"];
+    size = json["size"];
+    imagen = json["imagen"];
+    altura = json["altura"];
+    tendSup = json["tendSup"];
+    tendInf = json["tendInf"];
+    durmientes = json["durmientes"];
+    peso = json["peso"];
+    resDinamica = json["resDinamica"];
+    resEstatica = json["resEstatica"];
+    resVacio = json["resVacio"];
+    dimension = json["dimension"];
+    dilatacion = json["dilatacion"];
+    entradas = json["entradas"];
+    garantia = json["garantia"];
   }
 }
 
-class Vendedor{
+class Vendedor {
   String? key;
   SellData? sellData;
 
   Vendedor({this.key, this.sellData});
 }
 
-class SellData{
+class SellData {
   late String rol;
   late String nombre;
   late String apellido;
@@ -109,7 +153,7 @@ class SellData{
 
   SellData(this.rol, this.nombre, this.apellido, this.email, this.passw);
 
-  SellData.fromJson(Map<dynamic, dynamic> json){
+  SellData.fromJson(Map<dynamic, dynamic> json) {
     rol = json["rol"];
     nombre = json["nombre"];
     apellido = json["apellido"];
@@ -118,14 +162,14 @@ class SellData{
   }
 }
 
-class Cliente{
+class Cliente {
   String? key;
   ClientData? clientData;
 
   Cliente({this.key, this.clientData});
 }
 
-class ClientData{
+class ClientData {
   late String nombre;
   late String apellido;
   late int telefono;
@@ -134,9 +178,10 @@ class ClientData{
   late String ciudad;
   late Vendedor vendedor;
 
-  ClientData(this.nombre, this.apellido, this.telefono, this.nitEmpresa, this.empresa, this.ciudad, this.vendedor);
+  ClientData(this.nombre, this.apellido, this.telefono, this.nitEmpresa,
+      this.empresa, this.ciudad, this.vendedor);
 
-  ClientData.fromJson(Map<dynamic, dynamic> json){
+  ClientData.fromJson(Map<dynamic, dynamic> json) {
     nombre = json["nombre"];
     apellido = json["apellido"];
     telefono = json["telefono"];
