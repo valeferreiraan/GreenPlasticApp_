@@ -6,8 +6,8 @@ import 'package:greenplastic_app/ui/pages/menuPage.dart';
 
 class LoginController extends GetxController {
   //usuario provisional
-  String username_prueba = 'adm@gp.com';
-  String password_prueba = '1';
+  String username_prueba = 'user1@dominio.com';
+  String password_prueba = '123456789';
 
   var user = ''.obs;
   var pswd = ''.obs;
@@ -32,11 +32,9 @@ class LoginController extends GetxController {
     } else {
       if (EmailValidator.validate(user)) {
         if (user == username_prueba && pswd == password_prueba) {
-          Get.off(MenuPage());
-          Get.snackbar('Bienvenido', 'GREEN PLASTIC COLOMBIA',
-              icon: Icon(Icons.people),
-              backgroundColor: Colors.green,
-              duration: Duration(seconds: 1));
+          Get.to(MenuPage());
+          Get.snackbar('Bienvenido', '',
+              icon: Icon(Icons.people), backgroundColor: Colors.green);
         } else {
           Get.snackbar('Error', 'Correo o contraseña incorrectos',
               icon: Icon(Icons.warning), backgroundColor: Colors.red);
