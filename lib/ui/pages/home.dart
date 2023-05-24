@@ -67,6 +67,9 @@ class HomePage extends StatelessWidget {
                   child: Icon(Icons.lock),
                 ),
               ),
+              onFieldSubmitted: (_) {
+                _login(); // Llamar a la función de inicio de sesión al presionar Enter
+              },
             ),
           ),
           SizedBox(
@@ -74,13 +77,6 @@ class HomePage extends StatelessWidget {
               height: 35,
               child: ElevatedButton(
                   onPressed: () {
-                    /*if (_textController.text.isEmpty) {
-                      Get.snackbar('Error', 'Los campos no pueden estar vacíos',
-                          icon: Icon(Icons.warning),
-                          backgroundColor: Colors.red);
-                    } else {
-                      Get.to(MenuPage());
-                    }*/
                     _LoginCon.login(_LoginCon.user.value, _LoginCon.pswd.value);
                   },
                   child: Text(
@@ -90,5 +86,9 @@ class HomePage extends StatelessWidget {
         ],
       ),
     ));
+  }
+
+  void _login() {
+    _LoginCon.login(_LoginCon.user.value, _LoginCon.pswd.value);
   }
 }

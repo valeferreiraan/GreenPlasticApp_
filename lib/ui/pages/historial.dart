@@ -114,7 +114,7 @@ class _HistorialPageState extends State<HistorialPage> {
                           padding: const EdgeInsets.all(16.0),
                           child: Text(
                             'Historial',
-                            style: Theme.of(context).textTheme.headlineMedium,
+                            style: Theme.of(context).textTheme.headlineLarge,
                           ),
                         ),
                         Column(
@@ -135,10 +135,9 @@ class _HistorialPageState extends State<HistorialPage> {
                                       Expanded(
                                         child: Text(
                                           'Historial',
-                                          style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 16,
-                                          ),
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyMedium,
                                         ),
                                       ),
                                     ],
@@ -215,13 +214,10 @@ class _HistorialPageState extends State<HistorialPage> {
                                           color: Colors.black),
                                       SizedBox(width: 10),
                                       Expanded(
-                                        child: Text(
-                                          'Contactos',
-                                          style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 16,
-                                          ),
-                                        ),
+                                        child: Text('Contactos',
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .bodyMedium),
                                       ),
                                     ],
                                   ),

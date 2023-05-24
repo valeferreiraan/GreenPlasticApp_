@@ -11,6 +11,9 @@ import 'package:greenplastic_app/ui/pages/prueba_database.dart';
 import 'package:flutter/material.dart';
 import 'package:greenplastic_app/ui/pages/home.dart';
 
+import '../cotizacion.dart';
+import '../historial.dart';
+
 class HomePageCart extends StatefulWidget {
   @override
   _HomePageCartState createState() => _HomePageCartState();
@@ -49,7 +52,9 @@ class _HomePageCartState extends State<HomePageCart> {
                 width: 250,
                 height: 35,
                 child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.to(CotizacionPage());
+                    },
                     child: Text(
                       'Cotización',
                       style: Theme.of(context).textTheme.labelLarge,
@@ -61,7 +66,9 @@ class _HomePageCartState extends State<HomePageCart> {
                 width: 250,
                 height: 35,
                 child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.to(HistorialPage());
+                    },
                     child: Text(
                       'Historial',
                       style: Theme.of(context).textTheme.labelLarge,
