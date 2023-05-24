@@ -5,7 +5,7 @@ import 'package:greenplastic_app/constants.dart';
 import 'package:greenplastic_app/ui/pages/home.dart';
 import 'package:greenplastic_app/ui/controllers/login_controller.dart';
 import 'package:greenplastic_app/ui/pages/prueba_database.dart';
-import 'package:greenplastic_app/ui/pages/pruebasubirdatos.dart';
+//import 'package:greenplastic_app/ui/pages/pruebasubirdatos.dart';
 
 import 'Cart_Catalogue/catalogo_productos.dart';
 import 'cotizacion.dart';
@@ -91,7 +91,7 @@ class _menuPageState extends State<MenuPage> {
                 height: 35,
                 child: ElevatedButton(
                     onPressed: () {
-                      Get.to(PruebaDatabase());
+                      //Get.to(PruebaDatabase());
                     },
                     child: Text(
                       'Test product',
