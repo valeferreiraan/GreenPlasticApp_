@@ -32,8 +32,8 @@ class LoginController extends GetxController {
     } else {
       if (EmailValidator.validate(user)) {
         if (user == username_prueba && pswd == password_prueba) {
-          Get.to(MenuPage());
-          Get.snackbar('Bienvenido', '',
+          Get.off(MenuPage());
+          Get.snackbar('Bienvenido', 'GREEN PLASTIC COLOMBIA',
               icon: Icon(Icons.people),
               backgroundColor: Colors.green,
               duration: Duration(seconds: 1));

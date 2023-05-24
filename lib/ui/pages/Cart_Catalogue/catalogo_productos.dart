@@ -43,6 +43,7 @@ class _HomePageCartState extends State<HomePageCart> {
                     },
                     child: Text(
                       'Catálogo',
+                      textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.labelLarge,
                     ))),
             SizedBox(

@@ -125,17 +125,60 @@ class _menuPageState extends State<MenuPage> {
           ),
           Center(
               child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
                 'assets/GreenPlastic.png',
                 width: 200,
                 height: 200,
               ),
-              Text(
-                'Green Plastic es un agente de cambio ambiental, revalorizamos retales plásticos de un solo uso mediante la transformación a elementos de larga vida, bajo un modelo de economía circular.',
-                textScaleFactor: 1,
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white),
+              Padding(
+                padding: const EdgeInsets.all(
+                    16), // Espacio entre los bordes de la aplicación y el rectángulo
+                child: Stack(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.asset(
+                        '/forest.jpg', // Ruta relativa del archivo de imagen
+                        width: double.maxFinite,
+                        height: 132,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(
+                          10), // Bordes curvos del rectángulo
+                      child: Container(
+                        color: Color3.withOpacity(
+                            0.5), // Color con opacidad del 50%
+                        padding: EdgeInsets.all(16),
+                        child: Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Align(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  'Green Plastic es un agente de cambio ambiental, revalorizamos retales plásticos de un solo uso mediante la transformación a elementos de larga vida, bajo un modelo de economía circular.',
+                                  textScaleFactor: 1,
+                                  textAlign: TextAlign
+                                      .justify, // Alineación justificada del texto
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 16,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: 20),
+                              // Otros elementos dentro del rectángulo
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ))
