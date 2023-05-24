@@ -6,8 +6,8 @@ import 'package:greenplastic_app/ui/pages/menuPage.dart';
 
 class LoginController extends GetxController {
   //usuario provisional
-  String username_prueba = 'user1@dominio.com';
-  String password_prueba = '123456789';
+  String username_prueba = 'adm@gp.com';
+  String password_prueba = '1';
 
   var user = ''.obs;
   var pswd = ''.obs;
@@ -34,7 +34,9 @@ class LoginController extends GetxController {
         if (user == username_prueba && pswd == password_prueba) {
           Get.to(MenuPage());
           Get.snackbar('Bienvenido', '',
-              icon: Icon(Icons.people), backgroundColor: Colors.green);
+              icon: Icon(Icons.people),
+              backgroundColor: Colors.green,
+              duration: Duration(seconds: 1));
         } else {
           Get.snackbar('Error', 'Correo o contraseña incorrectos',
               icon: Icon(Icons.warning), backgroundColor: Colors.red);
