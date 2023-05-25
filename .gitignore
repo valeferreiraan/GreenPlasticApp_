@@ -9,6 +9,8 @@ firebase-debug.*.log*
 
 .dart_tool/
 
+build/
+
 # Firebase cache
 .firebase/
 

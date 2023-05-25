@@ -142,7 +142,9 @@ class _HomePageCartState extends State<HomePageCart> {
                   child: Align(
                     alignment: Alignment.topRight,
                     child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(CotizacionPage());
+                      },
                       icon: Icon(Icons.shopping_cart),
                       color: Color3,
                     ),

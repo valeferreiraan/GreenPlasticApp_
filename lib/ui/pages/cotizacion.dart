@@ -139,10 +139,7 @@ class _CotizacionPageState extends State<CotizacionPage> {
               ),
             ),
             SizedBox(height: 16.0),
-            Text(
-              'Total:',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+            Text('Total:', style: Theme.of(context).textTheme.bodyLarge),
             SizedBox(height: 8.0),
             TextField(
               controller: _totalController,
@@ -150,13 +147,30 @@ class _CotizacionPageState extends State<CotizacionPage> {
             ),
             SizedBox(height: 16.0),
             Center(
-              child: ElevatedButton(
-                onPressed: () {
-                  // Acción al presionar el botón "Seguir viendo"
-                },
-                child: Text('Seguir viendo'),
-              ),
-            ),
+                child: Row(
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    // Acción al presionar el botón "Seguir viendo"
+                    Get.to(HomePageCart());
+                  },
+                  child: Text(
+                    'Seguir viendo',
+                    style: Theme.of(context).textTheme.labelLarge,
+                  ),
+                ),
+                Spacer(),
+                ElevatedButton(
+                  onPressed: () {
+                    // Acción al presionar el botón "Seguir viendo"
+                  },
+                  child: Text(
+                    'Finalizar',
+                    style: Theme.of(context).textTheme.labelLarge,
+                  ),
+                ),
+              ],
+            )),
           ],
         ),
       ),
