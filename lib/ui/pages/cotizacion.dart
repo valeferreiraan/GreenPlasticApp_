@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
 
 import '../../constants.dart';
-import 'Cart_Catalogue/catalogo_productos.dart';
 import 'historial.dart';
 import 'home.dart';
 
@@ -31,9 +30,7 @@ class _CotizacionPageState extends State<CotizacionPage> {
                 width: 250,
                 height: 35,
                 child: ElevatedButton(
-                    onPressed: () {
-                      Get.to(HomePageCart());
-                    },
+                    onPressed: () {},
                     child: Text(
                       'Catálogo',
                       style: Theme.of(context).textTheme.labelLarge,
@@ -116,7 +113,7 @@ class _CotizacionPageState extends State<CotizacionPage> {
                       children: [
                         Text(
                           'Cotización',
-                          style: Theme.of(context).textTheme.headlineLarge,
+                          style: Theme.of(context).textTheme.headlineMedium,
                         ),
                         Text(
                           'Resumen de Cotización',

@@ -114,13 +114,12 @@ class _HistorialPageState extends State<HistorialPage> {
                           padding: const EdgeInsets.all(16.0),
                           child: Text(
                             'Historial',
-                            style: Theme.of(context).textTheme.headlineLarge,
+                            style: Theme.of(context).textTheme.headlineMedium,
                           ),
                         ),
                         Column(
                           children: [
                             Card(
-                              color: Color3,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),
@@ -131,14 +130,15 @@ class _HistorialPageState extends State<HistorialPage> {
                                       vertical: 10, horizontal: 15),
                                   child: Row(
                                     children: [
-                                      Icon(Icons.history, color: Color1),
+                                      Icon(Icons.history, color: Colors.black),
                                       SizedBox(width: 10),
                                       Expanded(
                                         child: Text(
                                           'Historial',
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .bodyMedium,
+                                          style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 16,
+                                          ),
                                         ),
                                       ),
                                     ],
@@ -152,10 +152,7 @@ class _HistorialPageState extends State<HistorialPage> {
                                     showBottomBorder: false,
                                     columns: [
                                       DataColumn(
-                                          label: Text(
-                                            'ID',
-                                          ),
-                                          numeric: true),
+                                          label: Text('ID'), numeric: true),
                                       DataColumn(label: Text('Descripción')),
                                       DataColumn(
                                           label: Text('Total'), numeric: true),
@@ -204,7 +201,6 @@ class _HistorialPageState extends State<HistorialPage> {
                               ),
                             ),
                             Card(
-                              color: Color3,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),
@@ -215,13 +211,17 @@ class _HistorialPageState extends State<HistorialPage> {
                                       vertical: 10, horizontal: 15),
                                   child: Row(
                                     children: [
-                                      Icon(Icons.contact_page, color: Color1),
+                                      Icon(Icons.contact_page,
+                                          color: Colors.black),
                                       SizedBox(width: 10),
                                       Expanded(
-                                        child: Text('Contactos',
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .bodyMedium),
+                                        child: Text(
+                                          'Contactos',
+                                          style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 16,
+                                          ),
+                                        ),
                                       ),
                                     ],
                                   ),
