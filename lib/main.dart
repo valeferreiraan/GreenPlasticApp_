@@ -37,10 +37,17 @@ class MainApp extends StatelessWidget {
           bodyMedium: GoogleFonts.quicksand(
             fontSize: 24.0,
             fontWeight: FontWeight.normal,
+            //color: Colors.white,
+          ),
+          bodyLarge: GoogleFonts.quicksand(
+            fontSize: 24.0,
+            fontWeight: FontWeight.normal,
+            color: Colors.white,
           ),
           bodySmall: GoogleFonts.quicksand(
             fontSize: 12.0,
             fontWeight: FontWeight.normal,
+            color: Colors.white,
           ),
           headlineLarge: GoogleFonts.righteous(
             fontSize: 45.0,
