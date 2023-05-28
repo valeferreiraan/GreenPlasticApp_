@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
+import 'package:greenplastic_app/ui/pages/Cart_Catalogue/catalogo_productos.dart';
 
 import '../../constants.dart';
 import 'historial.dart';

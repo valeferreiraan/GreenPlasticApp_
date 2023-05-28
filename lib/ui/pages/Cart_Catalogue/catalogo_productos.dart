@@ -229,7 +229,7 @@ class _HomePageCartState extends State<HomePageCart> {
                         ),
                         ElevatedButton(
                           onPressed: () {
-                            saveData(index);
+                            //saveData(index);
                           },
                           child: Text('Ver más',
                               style: Theme.of(context).textTheme.labelLarge),
@@ -247,7 +247,7 @@ class _HomePageCartState extends State<HomePageCart> {
   }
 }
 
-final cart = Provider.of<CartProvider>(context as BuildContext);
+/*final cart = Provider.of<CartProvider>(context as BuildContext);
 
 void saveData(int index) {
   var dbHelper;
@@ -270,5 +270,5 @@ void saveData(int index) {
   }).onError((error, stackTrace) {
     print(error.toString());
   });
-}
+}*/
 

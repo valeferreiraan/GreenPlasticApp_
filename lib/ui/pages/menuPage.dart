@@ -32,7 +32,7 @@ class _menuPageState extends State<MenuPage> {
                 height: 35,
                 child: ElevatedButton(
                     onPressed: () {
-                      Get.to(ProductCatalog());
+                      Get.to(HomePageCart());
                     },
                     child: Text(
                       'Catálogo',
@@ -45,9 +45,7 @@ class _menuPageState extends State<MenuPage> {
                 width: 250,
                 height: 35,
                 child: ElevatedButton(
-                    onPressed: () {
-
-                    },
+                    onPressed: () {},
                     child: Text(
                       'Cotización',
                       style: Theme.of(context).textTheme.labelLarge,
